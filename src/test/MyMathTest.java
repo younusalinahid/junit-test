@@ -7,14 +7,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MyMathTest {
 
-    @Test
-    void test() {
+    private MyMath math = new MyMath();
 
-        int[] numbers = {1,2,3};
-        MyMath math = new MyMath();
-        int result = math.calculateSum(numbers);
-        System.out.println(result);
-        int expectedResult = 6;
-        assertEquals(expectedResult, result);
+    @Test
+    void calculateSum_ThreeMemberArray() {
+        assertEquals(6, math.calculateSum(new int[]{1,2,3}));
     }
+
+    @Test
+    void calculateSum_ZeroLengthArray() {
+         //include four line in one code using refector inline method
+         //int[] numbers = {1,2,3};
+         //int result = math.calculateSum(numbers);
+         //int expectedResult = 6;
+         //assertEquals(expectedResult, result);
+        assertEquals(0, math.calculateSum(new int[] {}));
+    }
+
 }
